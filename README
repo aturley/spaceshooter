@@ -1,0 +1,57 @@
+INSTALLATION:
+
+1. Make sure that you have Python 2.6
+(http://www.python.org/download/) and Pyglet
+(http://www.pyglet.org/download.html) installed on your computer.
+
+2. Decompress the distribution file (spaceshooter.VERSION.tgz).
+
+RUNNING:
+
+1. In the install directory, run the game server and the game with the
+following commands:
+
+python server-demogame.py
+python demogame.py
+
+You can specify a port for the game server (server-demogame.py) by
+passing the port number on the command line like this:
+
+python server-demogame.py 6969
+
+By default the game runs on port 8080
+
+2. Once the server and game have been started, use Safari on the
+iPhone to go to the following URL:
+
+http://[GAMEHOST]:PORT
+
+where [GAMEHOST] is the IP address or name (if you are running DNS) of
+the machine hosting the game, and port is the server port number.
+
+PLAYING:
+
+When you access the URL you will get a page with two rectangles, one
+green and one red. To join the game, touch the green rectangle while
+the game is in the joining state. Once a player has enter the game,
+other players have 10 seconds to enter. Once this time has elapsed,
+the game starts.
+
+Players move by flicking their fingers in the green area of the web
+page and they shoot by flicking their fingers in the red area. The
+direction of the flick determines the direction of flight or the
+direction of the shot. The distance of the flick determines the
+speed. Note that a "flick" is placing a finger in the red or green
+area, moving it, and then lifting it. If you do not lift your finger
+at the end of the motion, it will not register as a flick.
+
+Games last 60 seconds. At the end of the period, the player with the
+most kills is announced as the winner. Then the game goes back to the
+joinging state.
+
+LICENCE:
+
+This software is released under the terms of the GPL by Andrew Turley
+(aturley@acm.org). It uses the simpleOSC library
+(www.ixi-software.net/download/simpleosc.html) which is also released
+under the terms of the GPL.

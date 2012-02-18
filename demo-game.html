@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<style type="text/css" media="screen">
+div {
+position: absolute;
+width: 50px;
+height: 50px;
+}
+#button {
+background-color: red;
+width: 50px;
+height: 50px;
+left: 0px;
+top: 0px;
+}
+#button2 {
+background-color: red;
+width: 50px;
+height: 50px;
+left: 0px;
+top: 100px;
+}
+#touchmove {
+background-color: green;
+width: 200px;
+height: 300px;
+left: 20px;
+top: 20px;
+}
+#touchshoot {
+background-color: red;
+width: 200px;
+height: 300px;
+left: 250px;
+top: 20px;
+}
+#touchind1, #touchind2,  #touchind3{
+background-color: blue;
+width: 20px;
+height: 20px;
+left: 100px;
+top: 100px;
+}
+</style>
+<title>Touch Me!</title>
+</head>
+<body>
+
+<script type="text/javascript" charset="utf-8" src="touchlib.js"></script>
+
+<script>
+function loaded() {
+
+var tm = new MultitouchStartEnd(document.getElementById("touchmove"),"touchmove");
+var ts = new MultitouchStartEnd(document.getElementById("touchshoot"),"touchshoot");
+
+jsonSender = new JsonEventSender(getXmlHttpRequestObject());
+
+jsonSender.addControl(tm);
+jsonSender.addControl(ts);
+setTimeout(function() { window.scrollTo(0, 1); }, 200);
+setInterval(function() { jsonSender.sendEvents("move"); }, 50);
+
+tind = [document.getElementById("touchind1"), document.getElementById("touchind2"), document.getElementById("touchind3")];
+}
+
+window.addEventListener('load', loaded, true);
+
+</script>
+
+<div id="touchmove"></div>
+<div id="touchshoot"></div>
+
+</body>
+</html>
